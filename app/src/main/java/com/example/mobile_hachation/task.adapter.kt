@@ -1,7 +1,9 @@
 package com.example.mobile_hachation
+import Task
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -10,6 +12,7 @@ class TaskAdapter(private val taskList: List<Task>) :
 
     class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.taskTitleTextView)
+        val checkBox: CheckBox = itemView.findViewById(R.id.taskCheckBox)
         val descriptionTextView: TextView = itemView.findViewById(R.id.taskDescriptionTextView)
     }
 
@@ -21,9 +24,10 @@ class TaskAdapter(private val taskList: List<Task>) :
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val task = taskList[position]
-        holder.titleTextView.text = task.title
+        holder.titleTextView.text = "${task.title} (${task.time})"
         holder.descriptionTextView.text = task.description
     }
+
 
     override fun getItemCount(): Int = taskList.size
 }

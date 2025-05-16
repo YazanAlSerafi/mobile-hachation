@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".NewTaskFragment">
 
     <TextView
@@ -31,6 +32,7 @@
             android:layout_height="match_parent"
             android:hint="name">
 
+
         </com.google.android.material.textfield.TextInputEditText>
 
 
@@ -46,11 +48,27 @@
             android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Description">
+            android:hint="description">
 
         </com.google.android.material.textfield.TextInputEditText>
 
     </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="الوقت: لم يتم التحديد"
+        android:layout_marginHorizontal="20dp"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/pickTimeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="اختر الوقت"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="4dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveBtn"

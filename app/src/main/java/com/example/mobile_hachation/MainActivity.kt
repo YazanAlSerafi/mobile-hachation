@@ -19,12 +19,13 @@ class MainActivity : AppCompatActivity() {
 
         val nameEditText = findViewById<EditText>(R.id.nameEditText)
         val startButton = findViewById<Button>(R.id.startButton)
-
+        val text = nameEditText.text.toString().trim()
         startButton.setOnClickListener {
             val name = nameEditText.text.toString()
             if (name.isNotEmpty()) {
                 val intent = Intent(this, TaskActivity::class.java)
-                intent.putExtra("USER_NAME", name)
+                intent.putExtra("USER_NAME", text)
+
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "ادخل اسمك أولًا", Toast.LENGTH_SHORT).show()

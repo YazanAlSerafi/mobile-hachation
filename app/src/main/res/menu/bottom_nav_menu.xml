@@ -9,6 +9,8 @@
         android:icon="@android:drawable/ic_menu_info_details"
         android:title="Summary" />
     <item
-        android:id="@+id/Settings"
+        android:id="@+id/settings"
+        android:icon="@android:drawable/ic_menu_preferences"
         android:title="Settings" />
+
 </menu>
