@@ -25,6 +25,7 @@ class TaskActivity : AppCompatActivity() {
             val selectedFragment = when (item.itemId) {
                 R.id.summary -> SummaryFragment()
                 R.id.todo ->TODOFragment()
+                R.id.Settings ->SettingsFragment()
                 else -> null
             }
             selectedFragment?.let {
