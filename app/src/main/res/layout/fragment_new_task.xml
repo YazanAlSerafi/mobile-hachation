@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="New Task"
-        android:textSize="32dp"
+        android:textSize="32sp"
         style="@style/TextAppearance.AppCompat.Title"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
@@ -25,6 +25,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+            app:boxBackgroundMode="outline"
             android:id="@+id/textname"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
