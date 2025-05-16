@@ -26,5 +26,45 @@
             android:background="?android:attr/windowBackground"
             app:menu="@menu/bottom_nav_menu" />
     </LinearLayout>
+    <!-- هان المحتوى الرئيسي للشاشة -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <!-- هاض زر عشان  أضيف  مهمة -->
+        <Button
+            android:id="@+id/addTaskButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add task" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <!-- RecyclerView هاض لعرض المهام  -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/taskRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:contentDescription="قائمة المهام"
+
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!--  هاض الكود للقائمة الجانبية -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer_menu"
+        android:fitsSystemWindows="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
