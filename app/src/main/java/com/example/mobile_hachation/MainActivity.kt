@@ -1,6 +1,5 @@
 package com.example.mobile_hachation
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -8,8 +7,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,12 +16,11 @@ class MainActivity : AppCompatActivity() {
 
         val nameEditText = findViewById<EditText>(R.id.nameEditText)
         val startButton = findViewById<Button>(R.id.startButton)
-        val text = nameEditText.text.toString().trim()
         startButton.setOnClickListener {
-            val name = nameEditText.text.toString()
-            if (name.isNotEmpty()) {
+            val Uname = nameEditText.text.toString()
+            if (Uname.isNotEmpty()) {
                 val intent = Intent(this, TaskActivity::class.java)
-                intent.putExtra("USER_NAME", text)
+                intent.putExtra("USER_NAME", Uname)
 
                 startActivity(intent)
             } else {

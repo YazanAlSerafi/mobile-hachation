@@ -1,6 +1,7 @@
 package com.example.mobile_hachation
 
 import TODOFragment
+import android.R.attr.name
 import android.R.attr.text
 import android.os.Bundle
 import android.view.MenuItem
@@ -21,7 +22,7 @@ class TaskActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task)
-        val name = intent.getStringExtra("USER_NAME") ?: text
+        val name = intent.getStringExtra("USER_NAME") ?: "Uname"
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -39,10 +40,11 @@ class TaskActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val navigationView: NavigationView = findViewById(R.id.navigation_view)
         navigationView.setNavigationItemSelectedListener(this)
 
-
+        val fragment = TODOFragment.newInstance(name.toString())
         supportFragmentManager.beginTransaction()
-            .replace(R.id.frameLayout, TODOFragment())
+            .replace(R.id.frameLayout, fragment)
             .commit()
+
 
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNav)
